@@ -69,3 +69,7 @@ mean of x mean of y
 --- linear regression, P value for our Null Hypothesis ---
 
 P-value for Extraversion Predictor: 0.000143801 
+
+
+--- Bar Chart of Extraversion Scores ---
+

@@ -1,4 +1,4 @@
-output_file <- "result.txt"
+output_file <- "console_log.txt"
 sink(output_file, append = TRUE, split = TRUE)
 
 cat("===== Library and Dataset Load =====\n\n")
@@ -19,7 +19,6 @@ cat("\n\n--- Pearson Correlation Test ---\n\n")
 print(cor_test)
 
 
-# independent t-test for groups based on threshold
 data$extroversion_group <- ifelse(data$extroversion_scores > 65, "High", "Low")
 t_test_result <- t.test(average_peer_score ~ extroversion_group, data = data)
 cat("\n\n--- T-Test Results ---\n\n")
@@ -27,7 +26,6 @@ print(t_test_result)
 
 model <- lm(average_peer_score ~ extroversion_scores, data = data)
 
-# Summary of the regression model (to check R-squared)
 summary_model <- summary(model)
 cat("R-squared value:", summary_model$r.squared, "\n")
 
@@ -69,6 +67,16 @@ summary_model <- summary(model)
 p_value <- summary_model$coefficients["extroversion_scores", "Pr(>|t|)"]
 cat("P-value for Extraversion Predictor:", p_value, "\n")
 
+cat("\n\n--- Bar Chart of Extraversion Scores ---\n\n")
+ggplot(data, aes(x = factor(extroversion_scores))) +
+  geom_bar(fill = "steelblue", color = "black") +
+  labs(title = "Bar Chart of Extraversion Scores",
+       x = "Extraversion Scores",
+       y = "Count") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
 sink()
 
 cat("All results have been saved to", output_file, "\n")
+
