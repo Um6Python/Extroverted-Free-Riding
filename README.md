@@ -5,11 +5,10 @@ This repository contains the code and accompanying study materials for research 
 
 ## Contents
 - **`code/`**  
-  - Scripts or notebooks for analyzing data related to teamwork and freeriding.  
-  - Example functions and modules demonstrating how to apply peer assessment or measure team dynamics.
-- **`study/`**  
-  - The main research paper or report detailing methodology, findings, and references.  
-  - Additional documentation supporting the study’s conclusions.
+  - ***`stats.r`***: Script for analyzing data related to peer contribution-perception and freeriding.  
+  - ***`important.txt`***: A log file which holds the state of the output console.
+- **`graphs/`**  
+  - The main graphs and plots generated during this study.  
 - **`data/`**  
   - **`free_riding.csv`**: The primary dataset used in this study.
 - **`README.md`**  
