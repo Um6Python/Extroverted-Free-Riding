@@ -1,0 +1,71 @@
+===== Library and Dataset Load =====
+
+===== Basic statistics summary =====
+
+
+
+--- Dataset Summary ---
+
+
+
+--- Pearson Correlation Test ---
+
+
+	Pearson's product-moment correlation
+
+data:  data$extroversion_scores and data$average_peer_score
+t = -4.397, df = 28, p-value = 0.0001438
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.8123331 -0.3622388
+sample estimates:
+       cor 
+-0.6391028 
+
+
+
+--- T-Test Results ---
+
+
+	Welch Two Sample t-test
+
+data:  average_peer_score by extroversion_group
+t = -8.8786, df = 26.005, p-value = 2.371e-09
+alternative hypothesis: true difference in means between group High and group Low is not equal to 0
+95 percent confidence interval:
+ -2.416845 -1.508155
+sample estimates:
+mean in group High  mean in group Low 
+            1.9950             3.9575 
+
+R-squared value: 0.4084525 
+
+
+--- Scatter plot with regression line (R^2) ---
+
+
+
+--- boxplot comparing peer scores across extraversion levels(Threshold = 65) ---
+
+Pearson Correlation Coefficient: -0.6391028 
+
+
+--- Independent t-test to compare peer scores for high and low extroversion groups ---
+
+
+	Welch Two Sample t-test
+
+data:  high_extroversion and low_extroversion
+t = -8.8786, df = 26.005, p-value = 2.371e-09
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -2.416845 -1.508155
+sample estimates:
+mean of x mean of y 
+   1.9950    3.9575 
+
+
+
+--- linear regression, P value for our Null Hypothesis ---
+
+P-value for Extraversion Predictor: 0.000143801 
