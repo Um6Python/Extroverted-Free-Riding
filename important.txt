@@ -1,0 +1,99 @@
+===== Library and Dataset Load =====
+
+===== Basic statistics summary =====
+
+
+
+=== Testing Assumptions about the Data ===
+
+
+
+--- Shapiro: Normality Check for extroversion_scores and average_peer_score ---
+
+--- Normality Check Results ---
+Extraversion Scores:  Data is normally distributed. 
+Peer Scores:  Data is normally distributed. 
+
+--- Equal Variances Assumption Results (Levene's Test) ---
+Levene's Test for Homogeneity of Variance (center = median)
+      Df F value   Pr(>F)   
+group  1   9.771 0.004105 **
+      28                    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Equal variances NOT assumed (p = 0.004104757 )
+
+
+--- Pearson Correlation Test ---
+
+
+	Pearson's product-moment correlation
+
+data:  data$extroversion_scores and data$average_peer_score
+t = -4.397, df = 28, p-value = 0.0001438
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.8123331 -0.3622388
+sample estimates:
+       cor 
+-0.6391028 
+
+Pearson Correlation Coefficient: -0.6391028 
+p-value for correlation: 0.000143801 
+There is a significant correlation between extraversion and peer scores (p = 0.000143801 )
+
+
+--- T-Test Results ---
+
+
+	Welch Two Sample t-test
+
+data:  average_peer_score by extroversion_group
+t = -8.8786, df = 26.005, p-value = 2.371e-09
+alternative hypothesis: true difference in means between group High and group Low is not equal to 0
+95 percent confidence interval:
+ -2.416845 -1.508155
+sample estimates:
+mean in group High  mean in group Low 
+            1.9950             3.9575 
+
+There is a significant difference in peer scores between high and low extraversion groups (p = 2.370905e-09 )
+
+
+--- Linear Regression Results ---
+
+
+Call:
+lm(formula = average_peer_score ~ extroversion_scores, data = data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.45745 -0.61769 -0.09796  0.49859  1.65098 
+
+Coefficients:
+                    Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          6.28580    0.69767   9.010 9.13e-10 ***
+extroversion_scores -0.04895    0.01113  -4.397 0.000144 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.8943 on 28 degrees of freedom
+Multiple R-squared:  0.4085,	Adjusted R-squared:  0.3873 
+F-statistic: 19.33 on 1 and 28 DF,  p-value: 0.0001438
+
+R-squared value: 0.4084525 
+P-value for Extraversion Predictor: 0.000143801 
+
+
+--- Scatter plot with regression line (R^2) ---
+
+
+
+--- Boxplot comparing peer scores across extraversion levels (Threshold = 65) ---
+
+
+
+--- Bar Chart of Extraversion Scores ---
+
+
+All results have been saved to important.txt 
